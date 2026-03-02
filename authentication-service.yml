@@ -50,6 +50,31 @@ eureka:
 server:
   port: 8082
 
+
+
+#cors properties
+
+application:
+  cors:
+    allowed-origins:
+      - "*"
+    allowed-methods:
+      - GET
+      - POST
+    allowed-headers:
+      - Authorization
+      - Content-Type
+    allow-credentials: true
+
+
+#jwt token
+jwt:
+  secret: YXNkZmFzZGZhc2RmYXNkZmFzZGZhc2RmYXNkZmFzZGZhc2Rm  # base64 string (min 256 bits)
+  access:
+    expiration: 900000       # 15 minutes
+  refresh:
+    expiration: 604800000    # 7 days
+
   
 
 
