@@ -17,13 +17,7 @@ spring:
         - id: authentication-service
           uri: lb://authentication-service
           predicates:
-           - name: Path
-             args:
-                patterns:
-                  - /auth/api/v1/auth/**
-                  - /auth/v3/api-docs/**
-                  - /auth/swagger-ui/**
-                  - /auth/swagger-ui.html
+            - path=/auth/**
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/auth/(?<segment>.*), /${segment}
