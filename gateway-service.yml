@@ -15,16 +15,16 @@ spring:
 
         # 🔓 AUTH SERVICE (Public Endpoints)
         - id: authentication-service
-          uri: lb://authentication-service
+          uri: lb://AUTHENTICATION-SERVICE
           predicates:
             - Path=/auth/**
           filters:
             - RemoveRequestHeader=Cookie
-            - StripPrefix=1
+           - StripPrefix=1
 
         # 🔓 USER REGISTER (Public)
         - id: user-service-register
-          uri: lb://user-service
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/users/register
           filters:
