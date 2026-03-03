@@ -15,16 +15,16 @@ spring:
 
         # 🔓 AUTH SERVICE (Public Endpoints)
         - id: authentication-service
-          uri: lb://authentication-service
+          uri: lb://AUTHENTICATION-SERVICE
           predicates:
-            - Path=/auth/api/v1/auth/**,/auth/v3/api-docs/**,/auth/swagger-ui/**,/auth/swagger-ui.html
+            - Path=/auth/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/auth/(?<segment>.*), /${segment}
+            - StripPrefix=1
 
         # 🔓 USER REGISTER (Public)
         - id: user-service-register
-          uri: lb://user-service
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/users/register
           filters:
@@ -32,7 +32,7 @@ spring:
 
         # 🔐 USER SERVICE (Protected)
         - id: user-service
-          uri: lb://user-service
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/users/**
           filters:
@@ -40,7 +40,7 @@ spring:
 
         # 🔐 ORDER SERVICE
         - id: order-service
-          uri: lb://order-service
+          uri: lb://ORDER-SERVICE
           predicates:
             - Path=/api/v1/orders/**
           filters:
@@ -48,7 +48,7 @@ spring:
 
         # 🔐 PRODUCT SERVICE
         - id: product-service
-          uri: lb://product-service
+          uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/api/v1/products/**
           filters:
@@ -56,7 +56,7 @@ spring:
 
         # 🔐 INVENTORY SERVICE
         - id: inventory-service
-          uri: lb://inventory-service
+          uri: lb://INVENTORY-SERVICE
           predicates:
             - Path=/api/v1/inventory/**
           filters:
@@ -64,7 +64,7 @@ spring:
 
         # 🔐 PAYMENT SERVICE
         - id: payment-service
-          uri: lb://payment-service
+          uri: lb://INVENTORY-SERVICE
           predicates:
             - Path=/api/v1/payments/**
           filters:
