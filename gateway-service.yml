@@ -20,7 +20,7 @@ spring:
             - Path=/auth/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/auth/(?<segment>.*), /${segment}
+            - StripPrefix=1
 
         # 🔓 USER REGISTER (Public)
         - id: user-service-register
