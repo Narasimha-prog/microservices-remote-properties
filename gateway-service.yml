@@ -20,7 +20,7 @@ spring:
             - Path=/auth/**
           filters:
             - RemoveRequestHeader=Cookie
-           - StripPrefix=1
+            - StripPrefix=1
 
         # 🔓 USER REGISTER (Public)
         - id: user-service-register
