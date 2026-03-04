@@ -23,11 +23,10 @@ spring:
         - id: authentication-service
           uri: lb://AUTHENTICATION-SERVICE
           predicates:
-            - Path=/auth/**
+            - Path=/api/v1/auth/*
           filters:
             - RemoveRequestHeader=Cookie
-            - StripPrefix=1
-
+           
         # 🔓 USER REGISTER (Public)
         - id: user-service-register
           uri: lb://USER-SERVICE
