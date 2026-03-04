@@ -12,3 +12,21 @@ eureka:
 
 server:
   port: 7777
+
+swagger:
+  services:
+    - name: AUTHENTICATION-SERVICE
+      url: http://AUTHENTICATION-SERVICE/v3/api-docs
+    - name: USER-SERVICE
+      url: http://USER-SERVICE/v3/api-docs
+    - name: ORDER-SERVICE
+      url: http://ORDER-SERVICE/v3/api-docs
+
+springdoc:
+  swagger-ui:
+    urls[0].name: Authentication
+    urls[0].url: /v3/api-docs/authentication
+    urls[1].name: User
+    urls[1].url: /v3/api-docs/user
+    urls[2].name: Order
+    urls[2].url: /v3/api-docs/order
