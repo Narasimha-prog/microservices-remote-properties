@@ -33,4 +33,4 @@ springdoc:
     urls[2].name: Order
     urls[2].url: /v3/api-docs/order
     urls[3].name: Product
-    urls[4].url: /v3/api-docs/product
+    urls[3].url: /v3/api-docs/product
