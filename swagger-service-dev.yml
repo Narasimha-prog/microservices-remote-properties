@@ -23,6 +23,10 @@ swagger:
       url: http://ORDER-SERVICE/v3/api-docs
     - name: PRODUCT-SERVICE
       url: http://PRODUCT-SERVICE/v3/api-docs
+    - name: PAYMENT-SERVICE
+      url: http://PAYMENT-SERVICE/v3/api-docs
+    - name: INVENTORY-SERVICE
+      url: http://INVENTORY-SERVICE/v3/api-docs
 
 springdoc:
   swagger-ui:
@@ -34,3 +38,8 @@ springdoc:
     urls[2].url: /v3/api-docs/order
     urls[3].name: Product
     urls[3].url: /v3/api-docs/product
+    urls[4].name: Payment
+    urls[4].url: /v3/api-docs/payment
+    urls[5].name: Inventory
+    urls[5].url: /v3/api-docs/payment
+
