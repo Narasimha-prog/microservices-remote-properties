@@ -53,3 +53,13 @@ eureka:
 
 server:
   port: 8084
+
+#actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

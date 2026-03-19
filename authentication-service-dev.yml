@@ -47,4 +47,14 @@ jwt:
     expiration: 900000       # 15 minutes
   refresh:
     expiration: 604800000    # 7 days
+
+#actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
  
