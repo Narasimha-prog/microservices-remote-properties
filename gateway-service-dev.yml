@@ -104,5 +104,19 @@ management:
     health:
       show-details: always
 
+#cors properties
+
+application:
+  cors:
+    allowed-origins:
+      - "*"
+    allowed-methods:
+      - GET
+      - POST
+    allowed-headers:
+      - Authorization
+      - Content-Type
+    allow-credentials: false
+
 
 
