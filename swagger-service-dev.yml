@@ -43,3 +43,13 @@ springdoc:
     urls[5].name: Inventory
     urls[5].url: /v3/api-docs/inventory
 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
