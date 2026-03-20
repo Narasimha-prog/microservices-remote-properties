@@ -19,8 +19,9 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
       properties:
-        spring.json.trusted.packages: "*"
-        spring.json.use.type.headers: false 
+        spring.json.trusted.packages: "*"      # allow any class
+        spring.json.use.type.headers: false    # ignore type headers
+        spring.json.value.default.type: com.eswar.inventoryservice.kafka.event.OrderCreatedEvent
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
