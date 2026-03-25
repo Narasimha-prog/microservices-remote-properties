@@ -53,12 +53,14 @@ management:
 application:
   cors:
     allowed-origins:
-      - "*"
+      - "http://localhost:7777"
+      - "http://10.144.131.219:7777"
     allowed-methods:
       - GET
       - POST
       - PUT
+      - OPTIONS
     allowed-headers:
       - Authorization
       - Content-Type
-    allow-credentials: false
+    allow-credentials: true
