@@ -18,6 +18,7 @@ spring:
             - Path=/v3/api-docs/**, /swagger-ui/**, /swagger-ui.html
           filters:
             - StripPrefix=0
+
         # 🔓 AUTH SERVICE (Public Endpoints)
         - id: authentication-service
           uri: lb://AUTHENTICATION-SERVICE
@@ -35,6 +36,8 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
 
+
+
         # 🔐 USER SERVICE (Protected)
         - id: user-service
           uri: lb://USER-SERVICE
@@ -42,6 +45,7 @@ spring:
             - Path=/api/v1/users/**
           filters:
             - JwtValidation
+
 
         # 🔐 ORDER SERVICE
         - id: order-service
@@ -58,6 +62,14 @@ spring:
             - Path=/api/v1/products/**
           filters:
             - JwtValidation
+
+        - id: product-service-user
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/api/v1/products/**
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
 
         # 🔐 INVENTORY SERVICE
         - id: inventory-service
