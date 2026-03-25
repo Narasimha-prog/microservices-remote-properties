@@ -33,7 +33,7 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/users/**
-            - Method=POST
+            - Method=POST,OPTIONS
           filters:
             - RemoveRequestHeader=Cookie
 
