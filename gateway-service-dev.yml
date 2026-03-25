@@ -32,7 +32,8 @@ spring:
         - id: user-service-register
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/api/v1/users/register
+            - Path=/api/v1/users/**
+            - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
 
@@ -55,13 +56,7 @@ spring:
           filters:
             - JwtValidation
 
-        # 🔐 PRODUCT SERVICE
-        - id: product-service
-          uri: lb://PRODUCT-SERVICE
-          predicates:
-            - Path=/api/v1/products/**
-          filters:
-            - JwtValidation
+       
 
         - id: product-service-user
           uri: lb://PRODUCT-SERVICE
@@ -70,6 +65,14 @@ spring:
             - Method=GET
           filters:
             - RemoveRequestHeader=Cookie
+
+         # 🔐 PRODUCT SERVICE
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/api/v1/products/**
+          filters:
+            - JwtValidation
 
         # 🔐 INVENTORY SERVICE
         - id: inventory-service
