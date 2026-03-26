@@ -162,13 +162,7 @@ application:
     allow-credentials: false
 
 
-  #jwt token
-jwt:
-  secret: YXNkZmFzZGZhc2RmYXNkZmFzZGZhc2RmYXNkZmFzZGZhc2Rm  # base64 string (min 256 bits)
-  access:
-    expiration: 900000       # 15 minutes
-  refresh:
-    expiration: 604800000    # 7 days
+
 
 
 
