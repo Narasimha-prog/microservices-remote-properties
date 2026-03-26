@@ -33,13 +33,21 @@ spring:
 # data jpa
 
  jpa:
-   hibernate:
-    ddl-auto: update
-   show-sql: true
-   properties:
     hibernate:
-       format_sql: true
-       dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+         # The number of statements to group together (recommended: 10-50)
+        jdbc:
+          batch_size: 25
+        default_batch_fetch_size: 50 
+        # Groups multiple 'insert' or 'update' statements for the same table
+        # to ensure they are sent in a single batch
+        order_inserts: true
+        order_updates: true
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 
 #liquibase
