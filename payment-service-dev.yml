@@ -53,17 +53,8 @@ management:
   endpoint:
     health:
       show-details: always
-
-#cors properties
-
-application:
-  cors:
-    allowed-origins:
-      - "*"
-    allowed-methods:
-      - GET
-      - POST
-    allowed-headers:
-      - Authorization
-      - Content-Type
-    allow-credentials: false
+      
+razorpay:
+  key: ${RAZORPAY_KEY}
+  secret: ${RAZORPAY_VALUE}
+  currency: INR
