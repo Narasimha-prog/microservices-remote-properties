@@ -91,3 +91,10 @@ application:
       - Authorization
       - Content-Type
     allow-credentials: false
+
+
+
+app:
+ kafka:
+   legacy: 
+       enabled: false
