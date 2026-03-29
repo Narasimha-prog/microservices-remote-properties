@@ -39,7 +39,7 @@ application:
 
   #jwt token
 jwt:
-  secret: YXNkZmFzZGZhc2RmYXNkZmFzZGZhc2RmYXNkZmFzZGZhc2Rm  # base64 string (min 256 bits)
+  secret: ${SECRET} # base64 string (min 256 bits)
   access:
     expiration: 900000       # 15 minutes
   refresh:
