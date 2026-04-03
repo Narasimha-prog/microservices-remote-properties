@@ -35,7 +35,10 @@ spring:
 #order
  kafka:
     bootstrap-servers: localhost:9092
-
+    listener:
+      # This is the "Receipt Book" fix. 
+      # It allows you to use 'Acknowledgment ack' in your method parameters.
+      ack-mode: manual_immediate
     consumer:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
