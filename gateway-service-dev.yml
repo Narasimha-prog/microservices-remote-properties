@@ -171,9 +171,7 @@ application:
       - Content-Type
     allow-credentials: false
 
-razorpay:
-  webhook:
-    secret: ${WEB}
+
 
 
 

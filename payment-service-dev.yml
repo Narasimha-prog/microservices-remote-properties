@@ -84,5 +84,9 @@ razorpay:
   secret: ${RAZORPAY_VALUE}
   currency: INR
 
+razorpay:
+  webhook:
+    secret: ${WEB}
+
 
 
