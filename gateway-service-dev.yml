@@ -109,7 +109,14 @@ spring:
             - JwtValidation
 
         
-
+  # 🔐  WEB HOOK PAYMENT SERVICE
+        - id: payment-service-webhook
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/api/v1/payments/webhook
+          filters:
+           - PreserveHostHeader
+           
         # 🔐 PAYMENT SERVICE
         - id: payment-service
           uri: lb://PAYMENT-SERVICE
@@ -117,6 +124,9 @@ spring:
             - Path=/api/v1/payments/**
           filters:
             - JwtValidation
+
+     
+           
 #eureka
 eureka:
   client:
