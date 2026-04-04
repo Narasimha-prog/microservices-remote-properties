@@ -116,7 +116,7 @@ spring:
             - Path=/api/v1/payments/webhook
           filters:
            - PreserveHostHeader
-           
+
         # 🔐 PAYMENT SERVICE
         - id: payment-service
           uri: lb://PAYMENT-SERVICE
@@ -170,6 +170,10 @@ application:
       - Authorization
       - Content-Type
     allow-credentials: false
+
+razorpay:
+  webhook:
+    secret: ${WEB}
 
 
 
