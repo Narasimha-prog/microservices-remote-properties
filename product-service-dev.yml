@@ -31,6 +31,14 @@ spring:
     enabled: false
     change-log: classpath:db/changelog/db.changelog-master.yaml
 
+
+  
+ servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB      # Individual file limit (e.g., one image)
+      max-request-size: 50MB   # Total request limit (e.g., all images combined)
+
 eureka:
   client:
     service-url:
@@ -72,3 +80,11 @@ application:
       - Authorization
       - Content-Type
     allow-credentials: true
+
+
+
+aws:
+  region: us-east-1
+  access-key: YOUR_ACCESS_KEY
+  secret-key: YOUR_SECRET_KEY
+  bucket-name: your-product-images-bucket

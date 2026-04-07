@@ -27,6 +27,12 @@ spring:
     change-log: classpath:db/changelog/db.changelog-master.yaml
     
 
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB      # Individual file limit (e.g., one image)
+      max-request-size: 50MB   # Total request limit (e.g., all images combined)
+
 eureka:
   client:
     service-url:
