@@ -125,6 +125,11 @@ spring:
           filters:
             - JwtValidation
 
+        - id: product-service-uploads
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/uploads/**
+
      
            
 #eureka
