@@ -1,0 +1,56 @@
+spring:
+#data source
+ datasource:
+   url: jdbc:postgresql://localhost:5430/ecommerce_db
+   username: admin
+   password: admin
+   driver-class-name: org.postgresql.Driver
+
+# data jpa
+
+ jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+         # The number of statements to group together (recommended: 10-50)
+        jdbc:
+          batch_size: 25
+        default_batch_fetch_size: 50 
+        # Groups multiple 'insert' or 'update' statements for the same table
+        # to ensure they are sent in a single batch
+        order_inserts: true
+        order_updates: true
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+#liquibase
+ liquibase:
+    enabled: false
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+
+
+
+server:
+  port: 8083
+
+#actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
