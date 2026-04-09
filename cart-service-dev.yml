@@ -54,3 +54,9 @@ management:
   endpoint:
     health:
       show-details: always
+
+grpc:
+  client:
+    product-service: # This must match the name inside @GrpcClient("product-service")
+      address: 'static://localhost:9091'
+      negotiation-type: plaintext

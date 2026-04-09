@@ -80,20 +80,11 @@ management:
     health:
       show-details: always
 
-
-#cors properties
-
-application:
-  cors:
-    allowed-origins:
-      - "*"
-    allowed-methods:
-      - GET
-      - POST
-    allowed-headers:
-      - Authorization
-      - Content-Type
-    allow-credentials: false
+grpc:
+  client:
+    product-service: # This must match the name inside @GrpcClient("product-service")
+      address: 'static://localhost:9091'
+      negotiation-type: plaintext
 
 
 
