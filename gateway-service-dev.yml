@@ -125,6 +125,13 @@ spring:
           filters:
             - JwtValidation
 
+        - id: cart-service
+          uri: lb://CART-SERVICE
+          predicates:
+            - Path=/api/v1/cart/**
+          filters:
+            - JwtValidation
+
         - id: product-service-uploads
           uri: lb://PRODUCT-SERVICE
           predicates:
