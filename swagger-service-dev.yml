@@ -27,6 +27,8 @@ swagger:
       url: http://PAYMENT-SERVICE/v3/api-docs
     - name: INVENTORY-SERVICE
       url: http://INVENTORY-SERVICE/v3/api-docs
+    - name: CART-SERVICE
+      url: http://CART-SERVICE/v3/api-docs
 
 springdoc:
   swagger-ui:
@@ -42,7 +44,8 @@ springdoc:
     urls[4].url: /v3/api-docs/payment
     urls[5].name: Inventory
     urls[5].url: /v3/api-docs/inventory
-
+    urls[6].name: Cart
+    urls[6].url: /v3/api-docs/cart
 
 management:
   endpoints:
