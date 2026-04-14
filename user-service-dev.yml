@@ -35,7 +35,7 @@ spring:
 
 grpc:
   server:
-    port: 9091 # 🛠️ Set it here once
+    port: 9090 # 🛠️ Set it here once
 
 eureka:
   client:
