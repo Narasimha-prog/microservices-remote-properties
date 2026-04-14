@@ -41,8 +41,15 @@ eureka:
   instance:
     prefer-ip-address: true
 
+grpc:
+  server:
+    port: 9091 # 🛠️ Set it here once
 
-
+eureka:
+  instance:
+    metadata-map:
+      # 🔗 This references the value above automatically
+      gRPC_port: ${grpc.server.port}
 
 server:
   port: 8081
