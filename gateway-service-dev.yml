@@ -106,7 +106,7 @@ spring:
             - Path=/api/v1/inventory/**
             - Method=GET
           filters:
-            - JwtValidation
+            - RemoveRequestHeader=Cookie
 
         # 🔐 INVENTORY SERVICE
         - id: inventory-service
