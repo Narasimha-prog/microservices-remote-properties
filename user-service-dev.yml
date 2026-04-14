@@ -33,6 +33,10 @@ spring:
       max-file-size: 10MB      # Individual file limit (e.g., one image)
       max-request-size: 50MB   # Total request limit (e.g., all images combined)
 
+grpc:
+  server:
+    port: 9091 # 🛠️ Set it here once
+
 eureka:
   client:
     service-url:
@@ -40,16 +44,13 @@ eureka:
 
   instance:
     prefer-ip-address: true
-
-grpc:
-  server:
-    port: 9091 # 🛠️ Set it here once
-
-eureka:
-  instance:
     metadata-map:
       # 🔗 This references the value above automatically
       gRPC_port: ${grpc.server.port}
+
+
+
+    
 
 server:
   port: 8081
