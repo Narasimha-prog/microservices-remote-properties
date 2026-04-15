@@ -58,8 +58,8 @@ management:
 grpc:
   client:
     product-service: # This must match the name inside @GrpcClient("product-service")
-      address: 'static://localhost:9091'
+      address: 'discovery:///product-service'
       negotiation-type: plaintext
     inventory-service: # New entry for stock checks
-      address: 'static://localhost:9092' # Inventory usually runs on a different port
+      address: 'discovery:///inventory-service' # Inventory usually runs on a different port
       negotiation-type: plaintext

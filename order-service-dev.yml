@@ -83,7 +83,7 @@ management:
 grpc:
   client:
     product-service: # This must match the name inside @GrpcClient("product-service")
-      address: 'static://localhost:9091'
+      address: 'discovery:///product-service'
       negotiation-type: plaintext
 
 

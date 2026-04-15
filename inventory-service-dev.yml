@@ -58,6 +58,10 @@ spring:
     enabled: false
     change-log: classpath:db/changelog/db.changelog-master.yaml
 
+grpc:
+  server:
+    port: 9092 # 🛠️ Set it here once
+
 eureka:
   client:
     service-url:
@@ -65,6 +69,9 @@ eureka:
 
   instance:
     prefer-ip-address: true
+    metadata-map:
+      # 🔗 This references the value above automatically
+      gRPC_port: ${grpc.server.port}
 
 
 
