@@ -31,7 +31,7 @@ eureka:
 
 
 server:
-  port: 8087
+  port: 8088
 
 #actuators
 management:
