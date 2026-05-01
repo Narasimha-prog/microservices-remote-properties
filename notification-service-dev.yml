@@ -1,0 +1,44 @@
+spring:
+
+ kafka:
+    bootstrap-servers: localhost:9092
+    
+    listener:
+      # This is the "Receipt Book" fix. 
+      # It allows you to use 'Acknowledgment ack' in your method parameters.
+      ack-mode: manual_immediate
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+      properties:
+        spring.json.trusted.packages: "*"      # allow any class
+        spring.json.use.type.headers: false    # ignore type headers
+        spring.json.value.default.type: com.eswar.paymentservice.kafka.events.OrderCreatedEvent  
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+
+
+
+server:
+  port: 8087
+
+#actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
