@@ -41,3 +41,9 @@ management:
   endpoint:
     health:
       show-details: always
+
+grpc:
+  client:
+    user-service: # This must match the name inside @GrpcClient("product-service")
+      address: 'discovery:///user-service'
+      negotiation-type: plaintext
