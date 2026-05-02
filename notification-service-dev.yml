@@ -14,11 +14,21 @@ spring:
 
       properties:
         spring.json.trusted.packages: "*"      # allow any class
-        spring.json.use.type.headers: false    # ignore type headers
+   mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-app-password # Not your login password, but a generated App Password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true     spring.json.use.type.headers: false    # ignore type headers
         spring.json.value.default.type: com.sitamahalakshmi.notification_service.kafka.events.OrderCreatedEvent
 
 
-eureka:
+ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
@@ -27,7 +37,17 @@ eureka:
     prefer-ip-address: true
 
 
-
+ mail:
+    host: smtp.gmail.com
+    port: 587
+    username: lnreddyreddy405@gmail.com
+    password: ${app-password} 
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 server:
   port: 8088
