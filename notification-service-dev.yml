@@ -13,6 +13,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
       properties:
+        spring.json.use.type.headers: false  
         spring.json.trusted.packages: "*"      # allow any class
         spring.json.value.default.type: com.sitamahalakshmi.notification_service.kafka.events.OrderCreatedEvent
  mail:
@@ -25,7 +26,7 @@ spring:
         smtp:
           auth: true
           starttls:
-            enable: true     spring.json.use.type.headers: false    # ignore type headers
+            enable: true      # ignore type headers
 
 
 
