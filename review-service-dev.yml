@@ -3,7 +3,7 @@ spring:
   # MongoDB Configuration
   data:
     mongodb:
-      uri: ${M_DB}
+      uri: mongodb+srv://admin:admin@cluster0.b36nvcn.mongodb.net/review_db?retryWrites=true&w=majority
       # If using Docker Compose networking, change localhost to 'mongodb'
   
   # Eureka Client Configuration
