@@ -1,0 +1,31 @@
+spring:
+  
+  # MongoDB Configuration
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/review_db
+      # If using Docker Compose networking, change localhost to 'mongodb'
+  
+  # Eureka Client Configuration
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+server:
+  port: 8089
+
+# Actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

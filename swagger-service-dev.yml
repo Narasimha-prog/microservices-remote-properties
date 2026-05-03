@@ -29,6 +29,8 @@ swagger:
       url: http://INVENTORY-SERVICE/v3/api-docs
     - name: CART-SERVICE
       url: http://CART-SERVICE/v3/api-docs
+    - name: REVIEW-SERVICE
+      url: http://REVIEW-SERVICE/v3/api-docs
 
 springdoc:
   swagger-ui:
@@ -46,7 +48,7 @@ springdoc:
     urls[5].url: /v3/api-docs/inventory
     urls[6].name: Cart
     urls[6].url: /v3/api-docs/cart
-
+    urls[7].name: Review
 management:
   endpoints:
     web:

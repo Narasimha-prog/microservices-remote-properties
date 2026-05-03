@@ -26,7 +26,7 @@ spring:
         smtp:
           auth: true
           starttls:
-            enable: true      # ignore type headers
+            enable: true      
             required: true
           ssl:
           protocols: TLSv1.2

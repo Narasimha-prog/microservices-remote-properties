@@ -145,6 +145,23 @@ spring:
           predicates:
             - Path=/uploads/**
 
+        
+        # 🔓 REVIEW SERVICE (Public - Read Reviews)
+        - id: review-service-public
+          uri: lb://REVIEW-SERVICE
+          predicates:
+            - Path=/api/v1/reviews/**
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+
+        # 🔐 REVIEW SERVICE (Protected - Post/Delete Reviews)
+        - id: review-service-protected
+          uri: lb://REVIEW-SERVICE
+          predicates:
+            - Path=/api/v1/reviews/**
+          filters:
+            - JwtValidation
      
            
 #eureka
