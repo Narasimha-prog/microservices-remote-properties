@@ -27,6 +27,7 @@ spring:
           auth: true
           starttls:
             enable: true      # ignore type headers
+            required: true
 
 
 
