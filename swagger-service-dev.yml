@@ -49,6 +49,8 @@ springdoc:
     urls[6].name: Cart
     urls[6].url: /v3/api-docs/cart
     urls[7].name: Review
+    urls[7].url: /v3/api-docs/review
+
 management:
   endpoints:
     web:
