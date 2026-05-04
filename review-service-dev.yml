@@ -2,13 +2,18 @@ spring:
   
   # MongoDB Configuration
   # data:
-    mongodb:
+ mongodb:
       uri: ${M_DB}
       # If using Docker Compose networking, change localhost to 'mongodb'
   
   # Eureka Client Configuration
 
-
+  
+ servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB      # Individual file limit (e.g., one image)
+      max-request-size: 50MB   # Total request limit (e.g., all images combined)
 eureka:
   client:
     service-url:
