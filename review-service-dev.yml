@@ -4,6 +4,8 @@ spring:
   # data:
  mongodb:
       uri: ${M_DB}
+      uuid-representation: standard
+
       # If using Docker Compose networking, change localhost to 'mongodb'
   
   # Eureka Client Configuration
