@@ -32,7 +32,7 @@ swagger:
     - name: REVIEW-SERVICE
       url: http://REVIEW-SERVICE/v3/api-docs
     - name: CHATBOT-SERVICE
-      url: http://CHATBOT-SERVICE/v3/apic-docs
+      url: http://CHATBOT-SERVICE/v3/api-docs
 
 springdoc:
   swagger-ui:
