@@ -37,7 +37,7 @@ spring:
     vectorstore:
       chroma:
         client:
-          host: http://localhost
+          host: localhost
           port: 8000
         collection-name: ecommerce-knowledge-base
         initialize-schema: true

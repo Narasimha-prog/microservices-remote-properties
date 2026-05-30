@@ -162,7 +162,14 @@ spring:
             - Path=/api/v1/reviews/**
           filters:
             - JwtValidation
-     
+
+        - id: chatbot-service
+          uri: lb://CHATBOT-SERVICE
+          predicates:
+            - Path=/api/v1/chatbot/**
+            - Method=POST,OPTIONS
+          filters:
+            - RemoveRequestHeader=Cookie
            
 #eureka
 eureka:
