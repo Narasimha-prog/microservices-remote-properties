@@ -170,6 +170,14 @@ spring:
             - Method=POST,OPTIONS
           filters:
             - RemoveRequestHeader=Cookie
+            
+        - id: promotion-service
+          uri: lb://PROMOTION-SERVICE
+          predicates:
+            - Path=/api/v1/promotion/**
+            - Method=POST,OPTIONS,GET
+          filters:
+            - RemoveRequestHeader=Cookie
            
 #eureka
 eureka:
