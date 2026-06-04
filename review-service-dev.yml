@@ -37,3 +37,15 @@ management:
   endpoint:
     health:
       show-details: always
+
+
+---
+# DOCKER CONFIGURATION
+spring:
+  config:
+    activate:
+      on-profile: docker
+eureka:
+  client:
+    service-url:
+      defaultZone: http://register-server:8761/eureka/

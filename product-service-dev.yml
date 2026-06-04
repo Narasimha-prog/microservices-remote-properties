@@ -101,3 +101,14 @@ aws:
   access-key: YOUR_ACCESS_KEY
   secret-key: YOUR_SECRET_KEY
   bucket-name: your-product-images-bucket
+
+---
+# DOCKER CONFIGURATION
+spring:
+  config:
+    activate:
+      on-profile: docker
+eureka:
+  client:
+    service-url:
+      defaultZone: http://register-server:8761/eureka/

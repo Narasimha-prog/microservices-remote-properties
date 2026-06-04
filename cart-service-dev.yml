@@ -63,3 +63,16 @@ grpc:
     inventory-service: # New entry for stock checks
       address: 'discovery:///inventory-service' # Inventory usually runs on a different port
       negotiation-type: plaintext
+
+
+
+---
+# DOCKER CONFIGURATION
+spring:
+  config:
+    activate:
+      on-profile: docker
+eureka:
+  client:
+    service-url:
+      defaultZone: http://register-server:8761/eureka/

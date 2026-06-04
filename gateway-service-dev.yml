@@ -226,7 +226,16 @@ application:
 
 
 
-
+---
+# DOCKER CONFIGURATION
+spring:
+  config:
+    activate:
+      on-profile: docker
+eureka:
+  client:
+    service-url:
+      defaultZone: http://register-server:8761/eureka/
 
 
 
