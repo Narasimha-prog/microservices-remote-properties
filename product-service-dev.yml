@@ -1,4 +1,14 @@
 spring:
+#cache
+ cache:
+   type: redis
+   redis:
+     time-to-live: 3600000       
+     cache-null-values: false     
+ data:
+   redis:
+     host: ${SPRING_DATA_REDIS_HOST:localhost} 
+     port: ${SPRING_DATA_REDIS_PORT:6379}      
 #data source
  datasource:
    url: ${DB_URL}
